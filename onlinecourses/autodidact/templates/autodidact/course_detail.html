@@ -1,0 +1,54 @@
+{% extends 'autodidact/layout.html'%}
+{% block title%}{{ course.title }}{% endblock %}
+
+{% block content%}
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .course-detail {
+            margin-left: 20%;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .course-detail h1 {
+            margin-top: 0;
+        }
+        .course-detail button1 {
+            background-color: #2b4b3f;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+        }
+        .course-detail button2 {
+            background-color: #163c70;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="course-detail">
+    <h1>{{ course.title }}</h1>
+    <p>{{ course.description }}</p>
+    <p>Начало курса: {{ course.start_date }}</p>
+    <p>Окончание курса: {{ course.end_date }}</p>
+    <p>Преподаватель: {{ course.instructor }}</p>
+    <button1 class="btn btn-danger" onclick="location.href='{% url 'course_module' pk=course.id %}'">Программа курса</button1>
+    <button2 class="btn btn-danger" onclick="location.href='{% url 'courses' %}'">Вернуться назад</button2>
+    </div>
+</body>
+{% endblock %}

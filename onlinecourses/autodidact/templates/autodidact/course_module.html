@@ -1,0 +1,27 @@
+{% extends 'autodidact/layout.html'%}
+{% block title%} Программа курса {{ course.title }} {% endblock %}
+{% block content %}
+  <div class="course-module">
+    <h1> Программа курса {{ course.title }} </h1>
+    <ul>
+    {% for module in object_list %}
+      <li>
+        <a href="{% url 'material_detail' course.id module.id %}">
+          {{ module.title }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+    <button class="btn btn-danger" onclick="location.href='{% url 'courses' %}'">Вернуться назад</button>
+  </div>
+
+<script type="text/javascript">
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if(e.style.display == 'block')
+        e.style.display = 'none';
+    else
+        e.style.display = 'block';
+}
+</script>
+{% endblock %}

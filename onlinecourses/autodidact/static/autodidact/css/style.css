@@ -1,0 +1,111 @@
+body {
+    background: #51816f;
+}
+
+aside {
+    position: fixed;
+    float: left;
+    background: #ffffff;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #ffffff;
+    border-right: 5px solid #0c0c0c;
+}
+
+aside img {
+    width: 70px;
+    float: left;
+}
+
+aside .logo {
+    color: #0c0c0c;
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    }
+
+aside h3 {
+    color: #0c0c0c;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+aside ul {list-style: none}
+aside ul li {
+    color: black;
+    display: block;
+    margin-top: 15px;
+    transition: transform .4s ease;
+}
+
+aside ul li:hover, aside ul a:hover{
+    color: #ea0b0b;
+    transform: scale(1.05);
+}
+
+main .features {
+    margin-left: 25%;
+    float: left;
+    color: black;
+    margin-top: 50px;
+    text-align: center;
+    width: 75%;
+    }
+
+main .features h1 {
+    font-size: 50px;
+    text-align: center;
+}
+main .features p {
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.course-program {
+    width: 80%;
+    float: right;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #53c294;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.course-module {
+    width: 80%;
+    float: right;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #53c294;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.material-list {
+    width: 80%;
+    float: right;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #53c294;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.material {
+    width: 80%;
+    float: left;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #53c294;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+

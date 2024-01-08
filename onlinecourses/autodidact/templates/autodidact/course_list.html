@@ -1,0 +1,43 @@
+{% extends 'autodidact/layout.html'%}
+{% block title%}Наши курсы{% endblock %}
+
+{% block content%}
+<head>
+    <style>
+        h1 {
+            margin-left: 20%;
+        }
+        .course-card {
+            margin-left: 20%;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .course-card h2 {
+            margin-top: 0;
+        }
+        .course-card button {
+            background-color: #163c70;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Наши курсы</h1>
+    {% for course in object_list %}
+    <div class="course-card">
+        <h2>{{ course.title }}</h2>
+        <p>{{ course.description }}</p>
+        <p><strong>Начало курса:</strong> {{ course.start_date|date:"d-m-Y" }}</p>
+        <button class="btn btn-danger" onclick="location.href='{% url "course_detail" course.id %}'">Просмотреть курс</button>
+    </div>
+    {% endfor %}
+</body>
+{% endblock %}
