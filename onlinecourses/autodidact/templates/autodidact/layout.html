@@ -20,6 +20,11 @@
             <a href="{% url 'home' %}"><li><i class="fa-solid fa-home"></i> Главная </li></a>
             <a href="{% url 'courses' %}"><li><i class="fa-solid fa-computer"></i> Наши курсы </li></a>
             <a href="{% url 'contacts' %}"><li><i class="fa-solid fa-phone"></i> Контакты </li></a>
+			{% if request.user.is_authenticated %}
+				<li class="last"> {{user.username}} | <a href="{% url 'users:logout' %}">Выйти</a></li>
+            {% else %}
+				<li class="last"><a href="{% url 'users:login' %}">Регистрация</a> | <a href="{% url 'users:login' %}">Войти</a></li>
+            {% endif %}
         </ul>
     </aside>
     <main>

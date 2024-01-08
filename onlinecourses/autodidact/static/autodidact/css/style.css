@@ -108,4 +108,24 @@ a {
     text-decoration: none;
 }
 
+.container {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+h2 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form .btn {
+    margin-top: 10px;
+}
 

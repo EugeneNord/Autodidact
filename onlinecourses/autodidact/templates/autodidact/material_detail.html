@@ -8,13 +8,13 @@
         <h2> {{ material.title }} </h2>
         <p> {{ material.content }} </p>
         {% if material.video %}
-          <video width="320" height="240" controls>
-            <source src="{{ material.video }}" type="video/mp4">
+          <video width="320" height="240" controls preload="auto">
+            <source src="{{ material.video.url }}" type="video/mp4">
             Ваш браузер не поддерживает тег video.
           </video>
         {% endif %}
         {% if material.file %}
-          <a href="{{ material.file }}" download>Скачать файл</a>
+          <a href="{{ material.file.url }}" download>Скачать файл</a>
         {% endif %}
       </div>
     {% endfor %}

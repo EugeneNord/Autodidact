@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+
 from .models import *
 from django.views.generic import ListView, DetailView
 

@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -57,8 +58,9 @@ class Material(models.Model):
     title = models.CharField(max_length=255, verbose_name='Наименование')
     type = models.CharField(max_length=255, choices=TYPE_CHOICES, verbose_name='Тип')
     content = models.TextField(max_length=10000, verbose_name='Содержание')
-    video = models.FileField(upload_to='autodidact/static/autodidact/video/', null=True, blank=True)
-    file = models.FileField(upload_to='autodidact/static/autodidact/file/', null=True, blank=True)
+    video = models.FileField(upload_to='video/', null=True, blank=True)
+    file = models.FileField(upload_to='file/', null=True, blank=True,
+                            validators=[FileExtensionValidator(allowed_extensions=['mp4'])])
     course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Курс')
     module = models.ForeignKey(Module, on_delete=models.CASCADE, verbose_name='Модуль')
 
