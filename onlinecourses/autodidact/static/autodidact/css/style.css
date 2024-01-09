@@ -152,3 +152,10 @@ form .btn {
     padding: 15px;
     margin: auto;
 }
+
+.profile {
+    width: 80%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
