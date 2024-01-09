@@ -26,7 +26,7 @@
     <button type="submit" class="logout-button">Выйти</button>
 </form></li>
             {% else %}
-				<li class="last"><a href="{% url 'users:login' %}" class="my-button">Регистрация</a> | <a href="{% url 'users:login' %}" class="my-button">Войти</a></li>
+				<li class="last"><a href="{% url 'users:register' %}" class="my-button">Регистрация</a> | <a href="{% url 'users:login' %}" class="my-button">Войти</a></li>
             {% endif %}
         </ul>
     </aside>
