@@ -129,3 +129,13 @@ form .btn {
     margin-top: 10px;
 }
 
+.logout-form {
+    display: inline;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: blue;
+}
+

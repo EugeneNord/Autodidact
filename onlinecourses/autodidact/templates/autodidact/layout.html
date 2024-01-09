@@ -21,9 +21,12 @@
             <a href="{% url 'courses' %}"><li><i class="fa-solid fa-computer"></i> Наши курсы </li></a>
             <a href="{% url 'contacts' %}"><li><i class="fa-solid fa-phone"></i> Контакты </li></a>
 			{% if request.user.is_authenticated %}
-				<li class="last"> {{user.username}} | <a href="{% url 'users:logout' %}">Выйти</a></li>
+				<li class="last"> {{user.username}} | <form action="{% url 'users:logout' %}" method="POST" class="logout-form">
+    {% csrf_token %}
+    <button type="submit" class="logout-button">Выйти</button>
+</form></li>
             {% else %}
-				<li class="last"><a href="{% url 'users:login' %}">Регистрация</a> | <a href="{% url 'users:login' %}">Войти</a></li>
+				<li class="last"><a href="{% url 'users:login' %}" class="my-button">Регистрация</a> | <a href="{% url 'users:login' %}" class="my-button">Войти</a></li>
             {% endif %}
         </ul>
     </aside>

@@ -1,7 +1,6 @@
-from django.contrib.auth import logout
-from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
 from .models import *
 from django.views.generic import ListView, DetailView
 
@@ -43,10 +42,11 @@ class ModuleListView(ListView):
         return context
 
 
-class MaterialListView(ListView):
+class MaterialListView(LoginRequiredMixin, ListView):
     model = Material
     template_name = 'autodidact/material_detail.html'
     context_object_name = 'material'
+    login_url = 'users:login'
 
     def get_queryset(self):
         return Material.objects.filter(module__id=self.kwargs['module_pk'])
